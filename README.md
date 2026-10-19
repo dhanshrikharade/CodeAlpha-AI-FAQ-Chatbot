@@ -1,107 +1,84 @@
-AskMate — AI FAQ Chatbot
+# AskMate — AI FAQ Chatbot
 
-An NLP-powered Frequently Asked Questions (FAQ) chatbot built using Python and Streamlit. AskMate matches user questions against a curated FAQ knowledge base and returns the most relevant available answer.
+An NLP-powered FAQ chatbot built with Python and Streamlit. AskMate matches user questions against a curated FAQ dataset and returns the most relevant answers using text similarity techniques.
 
-Features
+## Features
 
-Interactive chatbot interface.
+- Interactive chatbot interface
+- NLP-based question matching using TF-IDF
+- Cosine similarity for finding relevant answers
+- Word-level and character-level text analysis
+- Suggested questions and chat history
+- CSV-based FAQ dataset
+- Similarity score and matched FAQ display
+- Custom dark theme with orange accents
 
-NLP-based question matching using TF-IDF.
+## Technologies Used
 
-Cosine similarity for matching user questions.
+- **Language:** Python
+- **Frontend:** Streamlit, HTML, CSS
+- **Data Processing:** Pandas
+- **NLP:** Scikit-learn TF-IDF Vectorizer
+- **Matching Algorithm:** Cosine Similarity
+- **Dataset:** CSV
 
-Word and character-level text features.
+## Project Structure
 
-Suggested questions and chat history.
-
-FAQ dataset managed through CSV.
-
-Similarity score and matched FAQ display.
-
-Responsive Streamlit interface.
-
-Technologies Used
-
-Language: Python
-
-Frontend: Streamlit and custom CSS
-
-Data Processing: Pandas
-
-NLP: Scikit-learn TF-IDF Vectorizer
-
-Matching Algorithm: Cosine Similarity
-
-Dataset: CSV
-
-Project Structure
-
+```text
 AI-FAQ-Chatbot/
-├── app.py
+├── askmate.py
 ├── faqs.csv
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
-Installation and Setup
+## Installation and Setup
 
-Clone this repository:
+1. Clone the repository:
 
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd AI-FAQ-Chatbot
+   ```bash
+   git clone https://github.com/dhanshrikharade/AI-FAQ-Chatbot.git
+   ```
 
-Create a virtual environment:
+2. Open the project directory:
 
-python -m venv .venv
+   ```bash
+   cd AI-FAQ-Chatbot
+   ```
 
-Activate it on Windows PowerShell:
+3. Install the dependencies:
 
-.\.venv\Scripts\Activate.ps1
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Install dependencies:
+4. Run the chatbot:
 
-pip install -r requirements.txt
+   ```bash
+   streamlit run askmate.py
+   ```
 
-Run the application:
+## How It Works
 
-streamlit run app.py
+1. The chatbot loads FAQs from a CSV dataset.
+2. TF-IDF converts questions into numerical text features.
+3. Cosine similarity compares the user's question with stored FAQs.
+4. The chatbot returns the most relevant available answer.
 
-Dataset Format
+## Future Improvements
 
-The faqs.csv file must contain two columns:
+- Expand the FAQ knowledge base
+- Improve intent recognition
+- Add multilingual question support
+- Deploy the chatbot online
 
-Question
+## Author
 
-Answer
+**Dhanashri Kharade**
 
-Add or edit FAQ records in this file to customize the chatbot's knowledge base.
+GitHub: https://github.com/dhanshrikharade
 
-How It Works
+---
 
-Load FAQ questions and answers from the CSV dataset.
-
-Convert FAQ questions into numerical TF-IDF vectors.
-
-Process the user's question using word-level and character-level features.
-
-Calculate cosine similarity scores to identify the closest matching FAQ.
-
-Display the corresponding answer when a suitable match is found.
-
-Note: AskMate retrieves answers from its FAQ dataset. It does not generate unrestricted answers like a large language model.
-
-Future Improvements
-
-Expand the FAQ dataset.
-
-Add topic-based FAQ categories.
-
-Improve spelling correction and semantic question matching.
-
-Add user feedback for answer quality.
-
-Deploy the application online.
-
-Author
-
-Developed as an internship project to demonstrate Python, NLP, information retrieval, and Streamlit application development.
+*Built as an internship project to explore Natural Language Processing and conversational AI.*
